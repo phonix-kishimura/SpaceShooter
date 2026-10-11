@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff254e2b2eb747449b6103818c18863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagTargets:
+  - Enemy
+  - TopBorder
 --- !u!70 &5042790450939791580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

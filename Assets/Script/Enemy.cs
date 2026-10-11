@@ -4,6 +4,8 @@ public class Enemy : MonoBehaviour
 {
     float enemySpeed = 5f;
     public bool isDestroyed = false;
+    [SerializeField] private string[] tagTargets = { "Laser", "BotBorder" };
+
     // Update is called once per frame
     void Update()
     {
@@ -12,16 +14,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Laser"))
+        foreach (string tagName in tagTargets)
         {
-
-            
-            Destroy(this.gameObject);
-            
-
-            Score.Instance.UpdateScoreText(isDestroyed);
-
+            if (collision.CompareTag(tagName))
+            {
+                FindAnyObjectByType<ObjectPooling>().ReturnGameObject(gameObject);
+            }
         }
-        
     }
 }

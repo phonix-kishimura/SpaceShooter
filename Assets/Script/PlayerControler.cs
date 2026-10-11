@@ -12,8 +12,8 @@ public class PlayerControler : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * moveX * speed * Time.deltaTime);
-        transform.Translate(Vector3.up * moveY * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * moveX * speed * -1 * Time.deltaTime);
+        transform.Translate(Vector3.up * moveY * speed * -1 * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -28,3 +28,4 @@ public class PlayerControler : MonoBehaviour
 
     }
 }
+ 
